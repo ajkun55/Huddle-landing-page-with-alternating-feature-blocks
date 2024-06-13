@@ -1,0 +1,302 @@
+@import url('./reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Poppins:wght@600&display=swap');
+
+:root{
+    --clr-Pink: hsl(322, 100%, 66%);
+    --clr-Very-Pale-Cyan: hsl(193, 100%, 96%);
+    --clr-Very-Dark-Cyan: hsl(192, 100%, 9%);
+    --clr-Grayish-Blue: hsl(208, 11%, 55%);
+    --fw-b: 700;
+}
+
+body{
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;    
+}
+
+header{
+    background: url('./images/bg-hero-mobile.svg') no-repeat, var(--clr-Very-Pale-Cyan);
+    background-size: 100% auto;
+}
+
+h1, h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: var(--clr-Very-Dark-Cyan);
+}
+
+.container{
+    width: 86%;
+    margin: 0 auto;
+    padding-block: 2rem;
+}
+
+main{
+    text-align: center;
+}
+
+/*nav*/
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+}
+
+nav img{
+    max-width: 30vw;
+}
+
+nav button{
+    background-color: white;
+    box-shadow: 0 1px 10px 1px hsla(192, 100%, 9%, 0.2);
+}
+
+.hero{
+    margin-block: 4rem 2rem;
+    text-align: center;
+}
+
+.hero h1{
+    font-size: 1.8rem;    
+}
+
+.hero p{
+    margin-block: 2rem;
+}
+
+.hero button{
+    background-color: var(--clr-Pink);
+    color: var(--clr-Very-Pale-Cyan);
+    min-width: 16rem;
+    height: 3rem;
+}
+
+.hero .text{
+    margin-bottom: 3rem;
+}
+
+/*sections*/
+
+section .container{
+    box-shadow: 0 1px 10px 1px hsla(192, 100%, 9%, 0.2);
+    padding: 1.5rem;
+    margin-block: 2.5rem;
+    border-radius: 1rem;
+}
+
+section .flex{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 4rem;
+}
+
+.reverse{
+    flex-direction: column !important;
+}
+
+section h2{
+    font-size: 1.3rem;
+}
+
+section p{
+    color: var(--clr-Grayish-Blue);
+    margin-block: 1.5rem;
+}
+
+section img{
+    margin-top: 2rem;
+}
+
+.card{
+    width: clamp(20rem, 80%, 800px);
+    box-shadow: 0 1px 10px 1px hsla(192, 100%, 9%, 0.2);
+    border-radius: 1rem;
+    background-color: white;
+    padding: 2rem !important;
+}
+
+.card h1{
+    font-size: 4.2vw;
+}
+
+.card button{
+    background-color: var(--clr-Pink);
+    color: var(--clr-Very-Pale-Cyan);
+    min-width: 14rem;
+    height: 3rem;
+    margin-top: 2rem;
+    box-shadow: 0 1px 10px 1px hsla(192, 100%, 9%, 0.2);
+}
+
+.bg{    
+    position: relative;
+}
+
+.bg::after{
+    content: '';
+    z-index: -10;
+    width: 100vw;
+    height: 55%;
+    position: absolute;
+    bottom: -3rem;
+    left: 0;
+    background-color: var(--clr-Very-Dark-Cyan);
+}
+
+/*wider*/
+
+@media (width > 800px){
+    .flex, section .flex{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 5rem;
+    }
+    header{
+        background: url('./images/bg-hero-desktop.svg') no-repeat, var(--clr-Very-Pale-Cyan);
+        background-size: 100% auto;
+        margin-bottom: 4.5rem;
+        padding-top: 1rem;
+    }
+    .card h1{
+        font-size: 2rem;
+    }
+    .card{
+        padding-block: 3rem !important;
+    }
+    .text{
+        text-align: start;
+    }
+    section .container{
+        padding: 3rem;
+        padding-left: 7.5rem;
+        p{
+            max-width: 30.5rem;
+        }
+        h2{
+            font-size: 2rem;
+        }
+    }
+    .hero .text{
+        max-width: 32rem;
+        h1{
+            font-size: 2.5rem;
+        }
+    }
+}
+
+
+/*common util*/
+
+button{
+    border: none;
+    border-radius: 5rem;
+    font-weight: 700;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+}
+
+button:hover{
+    opacity: 0.7;
+}
+
+/*footer*/
+
+footer{
+    background-color: var(--clr-Very-Dark-Cyan);
+    color: var(--clr-Very-Pale-Cyan);    
+}
+
+.main-footer{
+    padding-top: 3rem;
+}
+
+.information{
+    margin-block: 2rem;
+}
+
+.information p{
+    display: flex;
+    gap: 1rem;
+    img{
+        min-height: 18px;
+        min-width: 18px;
+        margin-top: 3px;
+    }
+}
+
+.links1, .links2{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-block: 1.5rem;
+}
+
+.links1 a:hover, .links2 a:hover{
+    text-decoration: underline;
+}
+
+.icons{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-block: 2rem;
+}
+
+.icons a{
+    cursor: pointer;
+    border: 1px solid var(--clr-Very-Pale-Cyan);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+}
+
+.icons a:hover{
+    border-color: var(--clr-Pink);
+    i{
+        color: var(--clr-Pink);
+    }
+}
+
+.right{
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+/*wider*/
+
+@media (width > 800px){
+    .footer-content{
+        display: flex;
+        gap: 10%;
+        margin-top: 3rem;
+    }
+    .information{
+        max-width: 30%;
+        margin-top: 1.5rem;
+    }
+    .information p:nth-of-type(2){
+        margin-block: 1.5rem;
+    }
+    .right{
+        text-align: end;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
